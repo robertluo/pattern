@@ -15,3 +15,5 @@
 .hg/
 /resources/clj-kondo.exports/
 .DS_Store
+.clj-kondo/*/
+.lsp/

@@ -1,26 +1,26 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.11.3"}
-        com.github.pangloss/pure-conditioning {:mvn/version "1.0.35"}
-        com.github.pangloss/fermor {:mvn/version "1.0.199"}
+ :deps {org.clojure/clojure {:mvn/version "1.12.0"}
+        com.github.pangloss/pure-conditioning {:mvn/version "1.0.35"} 
         com.github.pangloss/genera {:mvn/version "1.0.28"}
         uncomplicate/fluokitten {:mvn/version "0.10.0"}
         potemkin/potemkin {:mvn/version "0.4.7"}}
  :aliases
  {:test {:extra-paths ["test"]
-         :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}}
+         :extra-deps {com.github.pangloss/fermor {:mvn/version "1.0.199"}
+                      org.clojure/test.check {:mvn/version "1.1.1"}}
          :jvm-opts ["-XX:-OmitStackTraceInFastThrow"]}
   :dev {:extra-paths ["dev"]
         :extra-deps {com.github.jpmonettas/flow-storm-debugger
                      {:git/url "https://github.com/jpmonettas/flow-storm-debugger"
-                      :git/sha "7a6caa0ab5662ed230bf4c7195f3e0cea99141c7"}
-                     com.clojure-goes-fast/clj-async-profiler {:mvn/version "1.2.0"}}
+                      :git/sha "940a6391555d171fda244acc320db5ff77f9704b"}
+                     com.clojure-goes-fast/clj-async-profiler {:mvn/version "1.5.1"}}
         :jvm-opts ["-XX:-OmitStackTraceInFastThrow"
                    ;; for async-profiler:
                    "-Djdk.attach.allowAttachSelf" "-XX:+UnlockDiagnosticVMOptions" "-XX:+DebugNonSafepoints"]}
   :runner
   {:extra-deps {cognitect-labs/test-runner
                 {:git/url "https://github.com/cognitect-labs/test-runner"
-                 :git/sha "7284cda41fb9edc0f3bc6b6185cfb7138fc8a023"}}
+                 :git/sha "3f288f1f16d167723ad87cc35b1dfee3c1681e10"}}
    :main-opts ["-m" "cognitect.test-runner"
                "-d" "test"]}
   :dev/dw {:extra-paths ["dev"]
@@ -28,6 +28,6 @@
                         pangloss/fermor {:local/root "../fermor"}}}
   :build
   ;; build.clj tool.
-  {:deps {io.github.clojure/tools.build {:git/tag "v0.10.3" :git/sha "15ead66"}
-          slipset/deps-deploy {:mvn/version "0.2.0"}}
+  {:deps {io.github.clojure/tools.build {:git/tag "v0.10.6" :git/sha "52cf7d6"}
+          slipset/deps-deploy {:mvn/version "0.2.2"}}
    :ns-default build}}}
